@@ -14,10 +14,23 @@ class CreateFilmsTable extends Migration
     public function up()
     {
         Schema::create('films', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('category_name');
+            $table->string('detail');
+            $table->string('imdb');
+            $table->string('director');
+            $table->string('artist');
+            $table->string('time');
+            $table->string('tags');
+            $table->string('image');
+            $table->string('video');
             $table->timestamps();
+            $table->softDeletes(); //mutlaka eklenmeli
         });
     }
+
+ 
 
     /**
      * Reverse the migrations.
