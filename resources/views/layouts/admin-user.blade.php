@@ -7,6 +7,8 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Kullanıcılar Listesi</h6>
                 </div>
+                @include('partials.errors')
+                @include('partials.alert')
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
@@ -30,7 +32,13 @@
                       </tr>
                       @endforeach
                     </tbody>
-                  </table>
+                  </table><br>
+                  
+             
+                 {{$users->links()}}
+                  
+                    
+                  </div>
                 </div>
               </div>
             </div>

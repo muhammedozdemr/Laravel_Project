@@ -8,6 +8,8 @@
                   <h6 class="m-0 font-weight-bold text-primary">Kullanıcı Güncelle</h6>
                   <a href="/users-list" class="btn btn-info">Geri Dön</a>
                 </div>
+                @include('partials.errors')
+                @include('partials.alert')
                 <div class="card-body">
                   <form action="{{route('layouts.users-update',$user->id)}}" method="POST">
                     <div class="form-group">

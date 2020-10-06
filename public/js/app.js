@@ -49743,6 +49743,14 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+setTimeout(function () {
+  $('.alert').slideUp(100);
+}, 700);
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
 
 /***/ }),
 
@@ -49878,8 +49886,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/Kodluyoruz/Laravel_BootCamp_Git_MuhammedOzdemir/kodluyoruzbootcamp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/Kodluyoruz/Laravel_BootCamp_Git_MuhammedOzdemir/kodluyoruzbootcamp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/muhammedozdemr/Masaüstü/Dersler/FilmSa/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/muhammedozdemr/Masaüstü/Dersler/FilmSa/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

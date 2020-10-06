@@ -10,7 +10,11 @@
                   <h6 class="m-0 font-weight-bold text-primary">Film Ekle</h6>
                   <a href="/admin-films" class="btn btn-info">Geri Dön</a>
                 </div>
-                <div class="card-body">
+                @include('partials.errors')
+                @include('partials.alert')
+               
+           
+                        <div class="card-body">
                   <form action="{{route('layouts.film-create')}}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                     	<label><b>Film Adı</b></label>

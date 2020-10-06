@@ -1,13 +1,18 @@
 @extends('layouts.admin-master')
 @section('films-table')
+
   <div class="row">
             <!-- Datatables -->
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Filmler Listesi</h6>
+                  
+
                   <a href="/film-ekle" class="btn btn-info">Film Ekle</a>
                 </div>
+                @include('partials.errors')
+                @include('partials.alert')
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush" id="dataTable">
                     <thead class="thead-light">
@@ -36,7 +41,8 @@
                       </tr>
                       @endforeach
                     </tbody>
-                  </table>
+                  </table><br>
+                  {{$films->links()}}
                 </div>
               </div>
             </div>

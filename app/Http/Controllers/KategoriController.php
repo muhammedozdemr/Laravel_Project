@@ -13,7 +13,7 @@ class KategoriController extends Controller
 {
     public function adminCategory()
     {
-    	$categories = Category::where('deleted_at','=',null)->get();//Veritabanından kullanıcıları çeker
+    	$categories = Category::where('deleted_at','=',null)->paginate(6);//Veritabanından kullanıcıları çeker
     	return view('layouts.admin-category',compact('categories'));
     }
 
@@ -23,7 +23,10 @@ class KategoriController extends Controller
             'deleted_at' => Carbon::now() //ile silindiği tarihi kaydeder.
         ]);
 
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Silindi')
+            ->with('mesaj_tur','success');
     }
 
     public function updateView($id)
@@ -40,7 +43,10 @@ class KategoriController extends Controller
             'ranking'    =>$request->get('ranking'),
             'updated_at' =>Carbon::now()
         ]);
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Güncellendi')
+            ->with('mesaj_tur','success');
     }
 
     public function createView()
@@ -56,6 +62,9 @@ class KategoriController extends Controller
             'created_at' => Carbon::now()
             
         ]);
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Başarıyla Kaydedildi')
+            ->with('mesaj_tur','success');
     }
 }

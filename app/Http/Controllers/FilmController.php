@@ -17,7 +17,7 @@ class FilmController extends Controller
     public function adminFilms()
     {
         
-    	$films = Film::where('deleted_at','=',null)->get();//Veritabanından kullanıcıları çeker
+    	$films = Film::where('deleted_at','=',null)->paginate(5);//Veritabanından kullanıcıları çeker
     	return view('layouts.admin-films',compact('films'));
     }
 
@@ -27,7 +27,10 @@ class FilmController extends Controller
             'deleted_at' => Carbon::now() //ile silindiği tarihi kaydeder.
         ]);
 
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Silindi')
+            ->with('mesaj_tur','success');
     }
 
     public function updateView($id)
@@ -53,7 +56,10 @@ class FilmController extends Controller
             'video'          =>$request->get('video'),
             'updated_at'     =>Carbon::now()
         ]);
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Güncellendi')
+            ->with('mesaj_tur','success');
     }
 
     public function createView()
@@ -95,7 +101,10 @@ class FilmController extends Controller
             'video'         => $video
         ]);
 
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Başarıyla Kaydedildi')
+            ->with('mesaj_tur','success');
             
        
     }

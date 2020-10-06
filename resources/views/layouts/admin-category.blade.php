@@ -5,6 +5,9 @@
                   <h6 class="m-0 font-weight-bold text-primary">Kategoriler Listesi</h6>
                   <a href="/kategori-ekle" class="btn btn-info">Kategori Ekle</a>
                 </div>
+                @include('partials.errors')
+                @include('partials.alert')
+                
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
@@ -27,8 +30,10 @@
                       </tr>
                      	@endforeach
                     </tbody>
-                  </table>
+                  </table><br>
+                  {{$categories->links()}}
                 </div>
+
                 <div class="card-footer"></div>
               </div>
 @endsection

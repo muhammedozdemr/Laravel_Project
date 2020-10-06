@@ -13,7 +13,9 @@ class AnasayfaController extends Controller
 {
     public function index()
     {
-    	return view('film-layouts.index');
+        $categories = DB::table('categories')->get();
+        $films = DB::table('films')->get();
+    	return view('film-layouts.index',compact('categories','films'));
     }
 
     public function createView()

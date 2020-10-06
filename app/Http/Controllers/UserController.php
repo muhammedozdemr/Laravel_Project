@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function userList()
     {
-    	$users = User::where('deleted_at','=',null)->get();//Veritabanından kullanıcıları çeker
+    	$users = User::where('deleted_at','=',null)->paginate(6);//Veritabanından kullanıcıları çeker
     	return view('layouts.admin-user',compact('users'));
     }
 
@@ -24,7 +24,10 @@ class UserController extends Controller
             'deleted_at' => Carbon::now() //ile silindiği tarihi kaydeder.
         ]);
 
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Silindi')
+            ->with('mesaj_tur','success');
     }
 
     public function updateView($id)
@@ -41,6 +44,9 @@ class UserController extends Controller
             'email'    =>$request->get('email'),
             'updated_at' =>Carbon::now()
         ]);
-        return back();
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Güncellendi')
+            ->with('mesaj_tur','success');
     }
 }

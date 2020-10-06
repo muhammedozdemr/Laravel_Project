@@ -8,6 +8,9 @@
                   <h6 class="m-0 font-weight-bold text-primary">Kategori Güncelle</h6>
                   <a href="/admin-category" class="btn btn-info">Geri Dön</a>
                 </div>
+                @include('partials.errors')
+                @include('partials.alert')
+             
                 <div class="card-body">
                   <form action="{{route('layouts.category-update',$category->id)}}" method="POST">
                     <div class="form-group">
