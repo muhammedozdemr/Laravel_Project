@@ -52,6 +52,10 @@
                      	<label><b>Film Süresi</b></label>
                       <input type="text" class="form-control" name="time" >
                     </div>
+                    <div class="form-group">
+                      <label><b>Film Yılı</b></label>
+                      <input type="text" class="form-control" name="date" >
+                    </div>
                      <div class="form-group">
                     <label><b>Film Etiketi</b></label>
                     <select class="select2-single form-control" name="tags" id="select2Single">

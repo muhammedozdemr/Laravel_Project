@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
         <div class="sidebar-brand-icon">
           <img src="{{asset('img/logo/F.png')}}">
         </div>
@@ -68,7 +68,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+         <a class="nav-link collapsed" href="/gguncelle/1">
           <i class="fas fa-cogs"></i>
           <span>Ayarlar</span>
         </a>
@@ -112,17 +112,16 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="{{asset('img/boy.png')}}" style="max-width: 60px">
+                
                 <span class="ml-2 d-none d-lg-inline text-white small">Muhammed Özdemir</span>
+                
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="/pguncelle/1">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profil
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Ayarlar
-                </a>
+                
                 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
@@ -156,6 +155,8 @@
        @yield('c-create')<!--Yeni Kategori Ekle  -->
        @yield('users-list')<!--Kullanıcı Listesi -->
        @yield('u-update')<!--Kullanıcıları Günceller -->
+       @yield('profil')<!--Yönetici Bilgilerini Günceller -->
+       @yield('g-ayarlar')<!--Sayfa Ayarlarını Günceller -->
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"

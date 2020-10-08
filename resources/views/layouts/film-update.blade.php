@@ -13,7 +13,7 @@
                 @include('partials.errors')
                 @include('partials.alert')
                 <div class="card-body">
-                  <form action="{{route('layouts.film-update',$film->id)}}" method="POST">
+                  <form action="{{route('layouts.film-update',$film->id)}}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                     	<label><b>Film Adı</b></label>
                       <input type="text" class="form-control" name="name" value="{{$film->name}}">
@@ -49,6 +49,10 @@
                      <div class="form-group">
                      	<label><b>Film Süresi</b></label>
                       <input type="text" class="form-control" name="time" value="{{$film->time}}">
+                    </div>
+                     <div class="form-group">
+                      <label><b>Film Yılı</b></label>
+                      <input type="text" class="form-control" name="date" value="{{$film->date}}">
                     </div>
                      <div class="form-group">
                     <label><b>Film Etiketi</b></label>

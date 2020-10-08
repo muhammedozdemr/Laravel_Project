@@ -20,9 +20,9 @@
                         <th>Name</th>
                         <th>Image</th>
                         <th>Category Name</th>
-                        <th>Artist</th>
-                        <th>Director</th> 	 	 
-                        <th>Imdb</th>
+                        <th>Artist</th> 	 	 
+                        <th>Year</th>
+                        <th>IMDB</th>
                         <th colspan="2"></th>
                       </tr>
                     </thead>
@@ -33,11 +33,10 @@
                         <td><img style="width:100px;height:150px;" src="uploads/films/{{$film->image}}"></td>
                         <td>{{$film->category_name}}</td>
                         <td>{{$film->artist}}</td>
-                        <td>{{$film->director}}</td>
-                        <td>{{$film->imdb}}</td>
+                        <td>{{$film->date}}</td>
+                        <td><span class="badge badge-warning p-2 mt-1">IMDB <b style="color: black">{{substr($film->imdb,0,3)}}</b></span></td>
                         <td class="text-right"><a href="/sil/{{$film->id}}" class="btn btn-danger">Sil</a></td>
                         <td class="text-right"><a href="/guncelle/{{$film->id}}" class="btn btn-success">Güncelle</a></td>
-
                       </tr>
                       @endforeach
                     </tbody>

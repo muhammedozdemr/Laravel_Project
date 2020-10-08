@@ -8,17 +8,20 @@ use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use App\Film;
 use App\Category;
+use App\Setting;
 
 class AnasayfaController extends Controller
 {
     public function index()
     {
+        $settings=DB::table('settings')->get();
         $categories = DB::table('categories')->get();
-        $films = DB::table('films')->get();
-    	return view('film-layouts.index',compact('categories','films'));
+        $films = Film::orderBy('created_at','desc')->paginate(24);
+    	return view('film-layouts.index',compact('categories','films','settings'));
     }
 
-    public function createView()
+    
+    /*public function createView()
     {
         return view('users.register');
     }
@@ -34,6 +37,6 @@ class AnasayfaController extends Controller
     		'created_at'     =>Carbon::now()
     	]);
         return back();
-    }
+    }*/
   
 }

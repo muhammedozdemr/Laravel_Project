@@ -7,6 +7,7 @@ class UploadPaths
 {
 	public static $uploadPaths = array(
 	'film_images' => '/uploads/films',
+	'ayar_images' => '/uploads/films',
 	'profile_photos'  => '/uploads/profiles'
 	);
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Redirect;
+use App\User;
+
 
 class HomeController extends Controller
 {
@@ -25,7 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.admin-master');
+        
+        $user=User::where('id','=','1')->get();
+        $user=$user->first();
+        return view('layouts.admin-master',compact('user'));
     }
 
   

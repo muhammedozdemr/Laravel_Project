@@ -16,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+//Yönetici ve Sayfa Ayar İşlemleri
+
+Route::post('/pguncelle/{id}','YonetimController@update')->where(array('id'=>'[0-9]+'))->name('Settings.profil-update');
+Route::get('/pguncelle/{id}','YonetimController@updateView')->where(array('id'=>'[0-9]+'));
+
+Route::post('/gguncelle/{id}','YonetimController@gupdate')->where(array('id'=>'[0-9]+'))->name('Settings.genel-update');
+Route::get('/gguncelle/{id}','YonetimController@gupdateView')->where(array('id'=>'[0-9]+'));
+
+
+
 
 //Veritabanımızdaki Film işlemleri İçin Kullanılmaktadır.
 Route::get('/admin-films','FilmController@adminFilms');

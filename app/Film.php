@@ -15,6 +15,7 @@ class Film extends Model
         'director',
         'artist',
         'time',
+        'date',
         'tags',
         'image',
         'video'    
