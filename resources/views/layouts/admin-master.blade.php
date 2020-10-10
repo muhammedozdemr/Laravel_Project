@@ -113,7 +113,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="{{asset('img/boy.png')}}" style="max-width: 60px">
                 
-                <span class="ml-2 d-none d-lg-inline text-white small">Muhammed Özdemir</span>
+                <span class="ml-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
                 
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -174,8 +174,13 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-outline-primary" data-dismiss="modal">İptal</button>
-                  <a href="/login" class="btn btn-primary">Çıkış</a>
+                  <a class="btn btn-outline-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Çıkış') }}</a>
                 </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
               </div>
             </div>
           </div>

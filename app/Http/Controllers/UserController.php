@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function userList()
     {
-    	$users = User::where('deleted_at','=',null)->where('is_admin','=','0')->orderBy('created_at','desc')->paginate(6);//Veritabanından kullanıcıları çeker
+    	$users = User::where('deleted_at','=',null)->where('is_admin','=',null)->orderBy('created_at','desc')->paginate(6);//Veritabanından kullanıcıları çeker
     	return view('layouts.admin-user',compact('users'));
     }
 

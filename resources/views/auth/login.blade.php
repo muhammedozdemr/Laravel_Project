@@ -33,7 +33,7 @@
                         @csrf
                         @include('partials.errors')
                     <div class="form-group">
-                      <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" 
+                      <input type="mail" name="email" class="form-control @error('email') is-invalid @enderror" 
                         placeholder="{{ __('E-Mail Adresiniz') }}" value="{{ old('email') }}">
                     </div>
                                 @error('email')

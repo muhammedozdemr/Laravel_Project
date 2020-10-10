@@ -8,7 +8,7 @@
 					
 							
 							<div class="col-md-2 w3l-movie-gride-agile">
-								<a href="single.html" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
+								<a href="/icerik/{{$film->id}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
 									<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
 								</a>
 								<div class="mid-1 agileits_w3layouts_mid_1_home">

@@ -50,8 +50,7 @@ Route::post('/uguncelle/{id}','UserController@update')->where(array('id'=>'[0-9]
 Route::get('/uguncelle/{id}','UserController@updateView')->where(array('id'=>'[0-9]+'));
 
 //Film platformundaki kullanıcılar için kullanılan işlemler
-Route::get('/user-ekle','AnasayfaController@createView');
-Route::post('/user-kayit','AnasayfaController@create')->name('users.register');
+
 //
 Auth::routes();
 Route::get('/admin', 'HomeController@index')->name('admin-anasayfa');
@@ -59,4 +58,10 @@ Route::get('/admin', 'HomeController@index')->name('admin-anasayfa');
 
 //Film Sayfaları
 Route::get('/','AnasayfaController@index')->name('film-anasayfa');
+Route::get('/user-ekle','AnasayfaController@createView');
+Route::post('/user-kayit','AnasayfaController@create')->name('film-layouts.user-create');
+Route::get('/g','AnasayfaController@loginView');
+Route::post('/giris','AnasayfaController@login')->name('film-layouts.user-create');
+Route::get('/icerik/{id}','AnasayfaController@icerik')->where(array('id'=>'[0-9]+'));
+
 

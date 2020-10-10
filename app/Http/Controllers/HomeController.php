@@ -33,5 +33,7 @@ class HomeController extends Controller
         return view('layouts.admin-master',compact('user'));
     }
 
+    
+
   
 }
