@@ -46,6 +46,8 @@ Route::post('/kategori-kaydet','KategoriController@create')->name('layouts.categ
 //Veritabanımızdaki Kullanıcı İşlemleri İçin Kullanılmaktadır.
 Route::get('users-list','UserController@userList');
 Route::get('/usil/{id}','UserController@delete')->where(array('id'=>'[0-9]+'));
+Route::get('users-comment','UserController@userComment');
+Route::get('/csil/{id}','UserController@cdelete')->where(array('id'=>'[0-9]+'));
 Route::post('/uguncelle/{id}','UserController@update')->where(array('id'=>'[0-9]+'))->name('layouts.users-update');
 Route::get('/uguncelle/{id}','UserController@updateView')->where(array('id'=>'[0-9]+'));
 
@@ -62,6 +64,13 @@ Route::get('/user-ekle','AnasayfaController@createView');
 Route::post('/user-kayit','AnasayfaController@create')->name('film-layouts.user-create');
 Route::get('/g','AnasayfaController@loginView');
 Route::post('/giris','AnasayfaController@login')->name('film-layouts.user-create');
-Route::get('/icerik/{id}','AnasayfaController@icerik')->where(array('id'=>'[0-9]+'));
+Route::get('/icerik/{name}','AnasayfaController@icerik');
+Route::get('/film-kategori/{name}','AnasayfaController@filmKategori');
+Route::get('/yenifilmler','AnasayfaController@filmYeni');
+Route::get('/encokizlenenler','AnasayfaController@filmIzlenen');
+Route::get('/a-z','AnasayfaController@azList');
+Route::get('/comment-ekle/{name}','AnasayfaController@commentView');
+Route::post('/comment-kayit','AnasayfaController@comment')->name('film-layouts.comment-create');
+
 
 

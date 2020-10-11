@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html" charset=UTF-8 />
 <meta name="keywords" content="{{$setting->anahtar_kelimeler}}" />
 <meta name="description" content="{{$setting->site_aciklama}}">
 <meta name="author" content="{{$setting->site_yazar}}">
@@ -35,6 +35,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- //font-awesome icons -->
+<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 <!-- js -->
 <script type="text/javascript" src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
 <!-- //js -->
@@ -55,6 +56,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	 
 	}); 
 </script> 
+
 <!-- //banner-bottom-plugin -->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 <!-- start-smoth-scrolling -->

@@ -1,5 +1,5 @@
-@include('film-layouts.head');
-@include('film-layouts.navbar');
+@include('film-layouts.head')
+@include('film-layouts.navbar')
 <div class="single-page-agile-main">
 <div class="container">
 		<!-- /w3l-medile-movies-grids -->
@@ -30,38 +30,7 @@
 				@endforeach
 				
 					<div class="clearfix"> </div>
-
-					<div class="all-comments">
-						<div class="all-comments-info">
-							<a href="#">Yorumlar</a>
-							<div class="agile-info-wthree-box">
-								<form>
-									<input type="text" placeholder="Name" required="">			           					   
-									<input type="text" placeholder="Email" required="">
-									<input type="text" placeholder="Phone" required="">
-									<textarea placeholder="Message" required=""></textarea>
-									<input type="submit" value="SEND">
-									<div class="clearfix"> </div>
-								</form>
-							</div>
-						</div>
-						<div class="media-grids">
-							<div class="media">
-								<h5>TOM BROWN</h5>
-								<div class="media-left">
-									<a href="#">
-										<img src="images/user.jpg" title="One movies" alt=" " />
-									</a>
-								</div>
-								<div class="media-body">
-									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
-									<span>View all posts by :<a href="#"> Admin </a></span>
-								</div>
-							</div>
-					
-
-						</div>
-					</div>
+					@include('film-layouts.comment-create')
 				</div>
 				@foreach($films as $film)
 				<div class="col-md-6 single-right" >
@@ -119,4 +88,4 @@
 			</div>	
 		</div>
 		
-		@include('film-layouts.footer');
+		@include('film-layouts.footer')

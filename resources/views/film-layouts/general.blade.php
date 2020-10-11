@@ -15,12 +15,12 @@
 							@if($film->date==2020)
 							
 							<div class="col-md-2 w3l-movie-gride-agile">
-								<a href="single.html" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
+								<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
 									<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
 								</a>
 								<div class="mid-1 agileits_w3layouts_mid_1_home">
 									<div class="w3l-movie-text">
-										<h6><a href="single.html">{{$film->name}}</a></h6>							
+										<h6><a href="/icerik/{{$film->name}}">{{$film->name}}</a></h6>							
 									</div>
 									<div class="mid-2 agile_mid_2_home">
 										<p>{{$film->date}}</p>
@@ -53,7 +53,7 @@
 							</a>
 							<div class="mid-1 agileits_w3layouts_mid_1_home">
 								<div class="w3l-movie-text">
-									<h6><a href="single.html">Central Intelligence</a></h6>							
+									<h6><a href="#">Central Intelligence</a></h6>							
 								</div>
 								<div class="mid-2 agile_mid_2_home">
 									<p>2016</p>
@@ -78,12 +78,12 @@
 						@if($film->imdb>=5)
 
 						<div class="col-md-2 w3l-movie-gride-agile">
-							<a href="single.html" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
+							<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
 								<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
 							</a>
 							<div class="mid-1 agileits_w3layouts_mid_1_home">
 								<div class="w3l-movie-text">
-									<h6><a href="single.html">{{$film->name}}</a></h6>							
+									<h6><a href="/icerik/{{$film->name}}">{{$film->name}}</a></h6>							
 								</div>
 								<div class="mid-2 agile_mid_2_home">
 									<p>{{$film->date}}</p>

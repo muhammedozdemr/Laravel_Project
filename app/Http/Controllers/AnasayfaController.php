@@ -16,19 +16,80 @@ class AnasayfaController extends Controller
     public function index()
     {
         $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
         $categories = DB::table('categories')->get();
         $films = Film::orderBy('created_at','desc')->paginate(24);
-    	return view('film-layouts.index',compact('categories','films','settings'));
+    	return view('film-layouts.index',compact('categories','films','settings','comments'));
     }
 
-    public function icerik($id)
+    public function icerik($name)
     {
         $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->where('film_adi','=',$name)->orderBy('created_at','desc')->get();
         $categories = DB::table('categories')->get();
-        $films=DB::table('films')->where('id','=',$id)->get();
+        $films=DB::table('films')->where('name','=',$name)->get();
 
-        return view('film-layouts.film-icerik',compact('films','settings','categories'));
+        return view('film-layouts.film-icerik',compact('films','settings','categories','comments'));
     }
+     public function filmKategori($name)
+    {
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $films=DB::table('films')->where('category_name','=',$name)->orderBy('date','desc')->paginate(24);
+
+        return view('film-layouts.film-kategori',compact('films','settings','categories','comments'));
+    }
+    public function filmYeni()
+    {
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $films=DB::table('films')->orderBy('date','desc')->paginate(24);
+
+        return view('film-layouts.film-yeni',compact('films','settings','categories','comments'));
+    }
+    public function filmIzlenen()
+    {
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $films=DB::table('films')->orderBy('date','desc')->paginate(24);
+
+        return view('film-layouts.film-izlenen',compact('films','settings','categories','comments'));
+    }
+    public function azList()
+    {
+      
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $films=DB::table('films')->orderBy('id','asc')->paginate(12);
+
+        return view('film-layouts.film-az',compact('films','settings','categories','comments'));
+    }
+
+    public function commentView()
+    {
+        return view('film-layouts.comment-create');
+    }
+    public function comment(Request $request)
+    {
+    
+        DB::table('comments')->insert([
+            'name'     => $request->get('name'),
+            'email'    => $request->get('email'),
+            'message'    => $request->get('message'),
+            'film_adi'    => $request->get('film_adi'),
+            'created_at'     =>Carbon::now()
+        ]);
+        return redirect()
+            ->back()
+            ->with('mesaj','Yorum Yapıldı ')
+            ->with('mesaj_tur','success');
+    }
+
+
 
     
     public function createView()

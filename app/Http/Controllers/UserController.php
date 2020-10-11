@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Film;
 use App\Category;
 use App\User;
+use App\Comment;
 
 class UserController extends Controller
 {
@@ -17,10 +18,27 @@ class UserController extends Controller
     	$users = User::where('deleted_at','=',null)->where('is_admin','=',null)->orderBy('created_at','desc')->paginate(6);//Veritabanından kullanıcıları çeker
     	return view('layouts.admin-user',compact('users'));
     }
-
     public function delete($id)
     {
         DB::table('users')->where('id','=',$id)->update([
+            'deleted_at' => Carbon::now() //ile silindiği tarihi kaydeder.
+        ]);
+
+        return redirect()
+            ->back()
+            ->with('mesaj','Kayıt Başarıyla Silindi')
+            ->with('mesaj_tur','success');
+    }
+
+    public function userComment()
+    {
+        $comments = Comment::where('deleted_at','=',null)->orderBy('created_at','desc')->paginate(6);//Veritabanından kullanıcıları çeker
+        return view('layouts.users-comment',compact('comments'));
+    }
+
+    public function cdelete($id)
+    {
+        DB::table('comments')->where('id','=',$id)->update([
             'deleted_at' => Carbon::now() //ile silindiği tarihi kaydeder.
         ]);
 

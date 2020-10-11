@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Comment extends Model
 {
-     protected $fillable = [
+       protected $fillable = [
     	'name',
-    	'ranking'
+    	'email',
+    	'message',
+    	'film_adi'
 
 
     ];
@@ -18,4 +20,3 @@ class Category extends Model
             return $this->hasMany('App\Film','id','category_name','name','image','date','imdb');
         }
 }
-

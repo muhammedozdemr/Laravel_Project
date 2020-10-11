@@ -63,7 +63,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Kullanıcı Düzenle</h6>
             <a class="collapse-item" href="/users-list">Listele</a>
-            <a class="collapse-item" href="#">Yorumlar</a>
+            <a class="collapse-item" href="/users-comment">Yorumlar</a>
           </div>
         </div>
       </li>
@@ -154,6 +154,7 @@
        @yield('c-update')<!--Kategoriler Bilgilerini Güncelle  -->
        @yield('c-create')<!--Yeni Kategori Ekle  -->
        @yield('users-list')<!--Kullanıcı Listesi -->
+       @yield('users-comment')<!-- Kullanıcı Yorumları -->
        @yield('u-update')<!--Kullanıcıları Günceller -->
        @yield('profil')<!--Yönetici Bilgilerini Günceller -->
        @yield('g-ayarlar')<!--Sayfa Ayarlarını Günceller -->

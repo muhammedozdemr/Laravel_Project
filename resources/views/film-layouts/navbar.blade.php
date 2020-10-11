@@ -21,17 +21,17 @@
 									<div class="col-sm-6">
 										<ul class="multi-column-dropdown">
 											@foreach($categories as $category)
-											<li><a href="#">{{$category->name}}</a></li>
+											<li><a href="/film-kategori/{{$category->name}}">{{$category->name}}</a></li>
 											@endforeach
 										</ul>
 									</div>
 									</li>
 								</ul>
 							</li>
-							<li><a href="series.html">Yeni Filmler</a></li>
-							<li><a href="news.html">En Çok Beğenilenler</a></li>
-							<li><a href="short-codes.html">En Çok İzlenenler</a></li>
-							<li><a href="list.html">A - z </a></li>
+							<li><a href="/yenifilmler">Yeni Filmler</a></li>
+							<li><a href="/begenilenler">En Çok Beğenilenler</a></li>
+							<li><a href="/encokizlenenler">En Çok İzlenenler</a></li>
+							<li><a href="/a-z">A - z </a></li>
 						</ul>
 					</nav>
 				</div>
