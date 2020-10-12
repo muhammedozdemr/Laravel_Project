@@ -15,7 +15,7 @@
 @include('film-layouts.general')
 <!-- //general -->
 <!-- general-bottom -->
-@include('film-layouts.general-bottom')
+@include('film-layouts.filmler')
 <!-- //general-bottom -->
 <!-- footer -->
 @include('film-layouts.footer')

@@ -34,6 +34,7 @@ Route::post('/guncelle/{id}','FilmController@update')->where(array('id'=>'[0-9]+
 Route::get('/guncelle/{id}','FilmController@updateView')->where(array('id'=>'[0-9]+'));
 Route::get('/film-ekle','FilmController@createView')->name('layouts.film-add');
 Route::post('/film-kaydet','FilmController@create')->name('layouts.film-create');
+Route::get('/ara','FilmController@ara');
 
 //Veritabanımızdaki Kategori İşlemleri İçin Kullanılmaktadır.
 Route::get('/admin-category','KategoriController@adminCategory');
@@ -42,6 +43,7 @@ Route::post('/edit/{id}','KategoriController@update')->where(array('id'=>'[0-9]+
 Route::get('/edit/{id}','KategoriController@updateView')->where(array('id'=>'[0-9]+'));
 Route::get('/kategori-ekle','KategoriController@createView')->name('layouts.category-add');
 Route::post('/kategori-kaydet','KategoriController@create')->name('layouts.category-create');
+
 
 //Veritabanımızdaki Kullanıcı İşlemleri İçin Kullanılmaktadır.
 Route::get('users-list','UserController@userList');
@@ -71,6 +73,7 @@ Route::get('/encokizlenenler','AnasayfaController@filmIzlenen');
 Route::get('/a-z','AnasayfaController@azList');
 Route::get('/comment-ekle/{name}','AnasayfaController@commentView');
 Route::post('/comment-kayit','AnasayfaController@comment')->name('film-layouts.comment-create');
+Route::get('/search','AnasayfaController@search');
 
 
 

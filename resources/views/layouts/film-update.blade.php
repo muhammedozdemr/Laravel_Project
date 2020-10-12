@@ -67,6 +67,7 @@
                      	<label><b>Yüklü Resim</b></label><br>
                       <img width="100" height="150" src="../uploads/films/{{$film->image}}"><br><br>
                       <input type="file" name="image">
+                      
                     </div>
                      <div class="form-group">
                      	<label><b>Video</b></label>

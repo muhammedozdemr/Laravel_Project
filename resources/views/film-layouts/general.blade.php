@@ -14,6 +14,7 @@
 							@foreach($films as $film)
 							@if($film->date==2020)
 							
+							
 							<div class="col-md-2 w3l-movie-gride-agile">
 								<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
 									<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
@@ -25,13 +26,9 @@
 									<div class="mid-2 agile_mid_2_home">
 										<p>{{$film->date}}</p>
 										<div class="block-stars">
-											<ul class="w3l-ratings">
-												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-												<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											</ul>
+											<span class="badge badge-warning p-2 mt-1">IMDB 
+							<b style="color: black">{{substr($film->imdb,0,3)}}</b>
+						</span>
 										</div>
 										<div class="clearfix"></div>
 									</div>
@@ -40,7 +37,7 @@
 									<p>NEW</p>
 								</div>
 							</div>
-						
+							
 							@endif
 							@endforeach
 							<div class="clearfix"> </div>
@@ -88,13 +85,9 @@
 								<div class="mid-2 agile_mid_2_home">
 									<p>{{$film->date}}</p>
 									<div class="block-stars">
-										<ul class="w3l-ratings">
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										</ul>
+										<span class="badge badge-warning p-2 mt-1">IMDB 
+							<b style="color: black">{{substr($film->imdb,0,3)}}</b>
+						</span>
 									</div>
 									<div class="clearfix"></div>
 								</div>

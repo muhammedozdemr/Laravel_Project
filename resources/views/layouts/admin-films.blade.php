@@ -6,9 +6,13 @@
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Filmler Listesi</h6>
-                  
-
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="/admin-films">Filmler Listesi</a></h6>
+                
+                  <form action="/ara" method="get">
+                    <input style="border-top:0;border-right:0;border-left:0;margin-bottom: -10px;width: 300px;border-bottom:1px solid #6777F0" type="text" name="ara" class="form-group" placeholder="Ara...">
+                    
+                  </form>
+                 
                   <a href="/film-ekle" class="btn btn-info">Film Ekle</a>
                 </div>
                 @include('partials.errors')

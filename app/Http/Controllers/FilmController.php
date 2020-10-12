@@ -21,6 +21,13 @@ class FilmController extends Controller
     	return view('layouts.admin-films',compact('films'));
     }
 
+    public function ara(Request $request)
+    {
+        $ara=$request->get('ara');
+        $films=DB::table('films')->where('name','like','%'.$ara.'%')->paginate(12);
+        return view('layouts.admin-films',['films'=>$films]);
+    }
+
     public function delete($id)
     {
         DB::table('films')->where('id','=',$id)->update([
@@ -130,6 +137,7 @@ class FilmController extends Controller
             
        
     }
+    
 
 
 }

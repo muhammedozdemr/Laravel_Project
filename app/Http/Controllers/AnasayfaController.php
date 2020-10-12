@@ -89,6 +89,16 @@ class AnasayfaController extends Controller
             ->with('mesaj_tur','success');
     }
 
+    public function search(Request $request)
+    {
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $search=$request->get('search');
+        $films=DB::table('films')->where('name','like','%'.$search.'%')->paginate(12);
+        return view('film-layouts.arama',['films'=>$films],compact('settings','comments','categories'));
+    }
+
 
 
     
