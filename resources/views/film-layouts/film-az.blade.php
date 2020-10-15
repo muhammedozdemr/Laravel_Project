@@ -29,7 +29,6 @@
                         <th style="color: white;">Yönetmen</th> 	 	 
                         <th style="color: white;">Yapım Yılı</th>
                         <th style="color: white;">IMDB</th>
-                        
                       </tr>
                     </thead>
                     <tbody>
@@ -50,6 +49,7 @@
                   </table><br>
                  
 								</div>
+                {{$films->links()}}
 							</div>
 				</div>
 			</div>

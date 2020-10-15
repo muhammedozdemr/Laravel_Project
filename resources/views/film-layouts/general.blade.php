@@ -10,9 +10,12 @@
 				<div id="myTabContent" class="tab-content">
 					<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
 						<div class="w3_agile_featured_movies">
-
+							
+							
 							@foreach($films as $film)
+							
 							@if($film->date==2020)
+							
 							
 							
 							<div class="col-md-2 w3l-movie-gride-agile">
@@ -39,40 +42,19 @@
 							</div>
 							
 							@endif
+							
 							@endforeach
+							<div class="col-md-2 w3l-movie-gride-agile">
+								<a href="/yenifilmler"><img src="{{asset('img/3.png')}}" style="height: 250px;" title="album-name" class="img-responsive" />
+								</a>
+							</div>
+							
 							<div class="clearfix"> </div>
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-						<div class="col-md-2 w3l-movie-gride-agile">
-							<a href="single.html" class="hvr-shutter-out-horizontal"><img src="img/films-img/m9.jpg" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
-								<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
-							</a>
-							<div class="mid-1 agileits_w3layouts_mid_1_home">
-								<div class="w3l-movie-text">
-									<h6><a href="#">Central Intelligence</a></h6>							
-								</div>
-								<div class="mid-2 agile_mid_2_home">
-									<p>2016</p>
-									<div class="block-stars">
-										<ul class="w3l-ratings">
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-											<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-										</ul>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="rating" aria-labelledby="rating-tab">
 						@foreach($films as $film)
-						@if($film->imdb>=5)
+						@if($film->views>=579)
 
 						<div class="col-md-2 w3l-movie-gride-agile">
 							<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
@@ -96,7 +78,42 @@
 						</div>
 						@endif
 						@endforeach
-						
+						<div class="col-md-2 w3l-movie-gride-agile">
+								<a href="/encokizlenenler"><img src="{{asset('img/3.png')}}" style="height: 250px;" title="album-name" class="img-responsive" />
+								</a>
+							</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="rating" aria-labelledby="rating-tab">
+						@foreach($films as $film)
+						@if($film->imdb>=7.2)
+
+						<div class="col-md-2 w3l-movie-gride-agile">
+							<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
+								<div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
+							</a>
+							<div class="mid-1 agileits_w3layouts_mid_1_home">
+								<div class="w3l-movie-text">
+									<h6><a href="/icerik/{{$film->name}}">{{$film->name}}</a></h6>							
+								</div>
+								<div class="mid-2 agile_mid_2_home">
+									<p>{{$film->date}}</p>
+									<div class="block-stars">
+										<span class="badge badge-warning p-2 mt-1">IMDB 
+							<b style="color: black">{{substr($film->imdb,0,3)}}</b>
+						</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+						</div>
+						@endif
+						@endforeach
+						<div class="col-md-2 w3l-movie-gride-agile">
+								<a href="/begenilenler"><img src="{{asset('img/3.png')}}" style="height: 250px;" title="album-name" class="img-responsive" />
+								</a>
+							</div>
 						<div class="clearfix"> </div>
 					</div>
 				

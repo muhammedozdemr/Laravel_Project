@@ -22,6 +22,7 @@ class CreateFilmsTable extends Migration
             $table->string('director');
             $table->string('artist');
             $table->string('time');
+            $table->increments('views');
             $table->string('date');
             $table->string('tags');
             $table->string('image');

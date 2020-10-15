@@ -28,6 +28,8 @@ class FilmController extends Controller
         return view('layouts.admin-films',['films'=>$films]);
     }
 
+    
+
     public function delete($id)
     {
         DB::table('films')->where('id','=',$id)->update([

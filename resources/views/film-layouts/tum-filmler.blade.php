@@ -1,6 +1,7 @@
-
+@include('film-layouts.head')
+@include('film-layouts.navbar')
 <div class="Latest-tv-series">
-		<h4 class="latest-text w3_latest_text w3_home_popular">Filmler</h4>
+		<h4 class="latest-text w3_latest_text w3_home_popular">Bütün Filmler</h4>
 		<div class="container">
 		<div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
 						<div class="w3_agile_featured_movies">
@@ -36,9 +37,7 @@
 							<div class="clearfix"> </div>
 							<center><div>
 							
-								<a href="/tumfilmler"><img style="height: 40px; width: 100%" src="{{asset('img/4.png')}}" style="height: 250px;" title="album-name" class="img-responsive" />
-								</a>
-							
+								{{$films->links()}}
 						</div></center>
 							
 						</div>
@@ -62,3 +61,4 @@
 			<!-- //flexSlider -->
 		</div>
 	</div>
+	@include('film-layouts.footer')

@@ -15,7 +15,7 @@ class Category extends Model
 
      public function film()
         {   
-            return $this->hasMany('App\Film','id','category_name','name','image','date','imdb');
+            return $this->hasMany('App\Film','id','category_name','name','image','date','imdb','view');
         }
 }
 

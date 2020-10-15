@@ -69,11 +69,13 @@ Route::post('/giris','AnasayfaController@login')->name('film-layouts.user-create
 Route::get('/icerik/{name}','AnasayfaController@icerik');
 Route::get('/film-kategori/{name}','AnasayfaController@filmKategori');
 Route::get('/yenifilmler','AnasayfaController@filmYeni');
+Route::get('/begenilenler','AnasayfaController@filmBegeni');
 Route::get('/encokizlenenler','AnasayfaController@filmIzlenen');
 Route::get('/a-z','AnasayfaController@azList');
 Route::get('/comment-ekle/{name}','AnasayfaController@commentView');
 Route::post('/comment-kayit','AnasayfaController@comment')->name('film-layouts.comment-create');
 Route::get('/search','AnasayfaController@search');
+Route::get('/tumfilmler','AnasayfaController@tumfilmler');
 
 
 

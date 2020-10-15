@@ -11,12 +11,12 @@
 							
 								<div class="tittle-head">
 
-									<h4 class="latest-text">Yeni Filmler</h4>
+									<h4 class="latest-text">Beğenilen Filmler</h4>
 									<div class="container">
 										<div class="agileits-single-top">
 											<ol class="breadcrumb">
 											  <li><a href="/">Anasayfa</a></li>
-											  <li class="active">Yeni Filmler</li>
+											  <li class="active">Beğenilen Filmler</li>
 											</ol>
 										</div>
 									</div>
@@ -26,7 +26,7 @@
 							<div class="browse-inner">
 	
 								@foreach($films as $film)
-								@if($film->date==2020)
+								@if($film->imdb>=5)
 								    <div class="col-md-2 w3l-movie-gride-agile">
 										 <a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img style="height: 250px;" src="../uploads/films/{{$film->image}}" title="album-name" alt=" " />
 									     <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
@@ -48,9 +48,7 @@
 											
 									</div>
 									
-							 	    <div class="ribben two">
-										<p>NEW</p>
-									</div>	
+							 	    
 									
 									</div>
 									@endif

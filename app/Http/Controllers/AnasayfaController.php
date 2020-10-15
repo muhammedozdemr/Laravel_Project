@@ -21,6 +21,15 @@ class AnasayfaController extends Controller
         $films = Film::orderBy('created_at','desc')->paginate(24);
     	return view('film-layouts.index',compact('categories','films','settings','comments'));
     }
+     public function tumfilmler()
+    {
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $films = Film::orderBy('created_at','desc')->paginate(18);
+        return view('film-layouts.tum-filmler',compact('categories','films','settings','comments'));
+    }
+    
 
     public function icerik($name)
     {
@@ -31,7 +40,15 @@ class AnasayfaController extends Controller
 
         return view('film-layouts.film-icerik',compact('films','settings','categories','comments'));
     }
+    public function show($id)
+    {
+        $films=Film::find($id);
+        $films->increments('views');
+        return view('film-layouts.show',['films'=>$films]);
+    }
+
      public function filmKategori($name)
+    
     {
         $settings=DB::table('settings')->get();
         $comments=DB::table('comments')->get();
@@ -45,16 +62,25 @@ class AnasayfaController extends Controller
         $settings=DB::table('settings')->get();
         $comments=DB::table('comments')->get();
         $categories = DB::table('categories')->get();
-        $films=DB::table('films')->orderBy('date','desc')->paginate(24);
+        $films=DB::table('films')->orderBy('date','desc')->paginate(30);
 
         return view('film-layouts.film-yeni',compact('films','settings','categories','comments'));
+    }
+    public function filmBegeni()
+    {
+        $settings=DB::table('settings')->get();
+        $comments=DB::table('comments')->get();
+        $categories = DB::table('categories')->get();
+        $films=DB::table('films')->orderBy('date','desc')->paginate(30);
+
+        return view('film-layouts.film-begeni',compact('films','settings','categories','comments'));
     }
     public function filmIzlenen()
     {
         $settings=DB::table('settings')->get();
         $comments=DB::table('comments')->get();
         $categories = DB::table('categories')->get();
-        $films=DB::table('films')->orderBy('date','desc')->paginate(24);
+        $films=DB::table('films')->orderBy('views','desc')->paginate(31);
 
         return view('film-layouts.film-izlenen',compact('films','settings','categories','comments'));
     }
@@ -146,5 +172,6 @@ class AnasayfaController extends Controller
             return 'Böyle bir kullanıcı bulunamadı';
         }
     }
-  
 }
+  
+

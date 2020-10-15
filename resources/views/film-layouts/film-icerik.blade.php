@@ -38,7 +38,9 @@
 						<span class="badge badge-warning p-2 mt-1">IMDB 
 							<b style="color: black">{{substr($film->imdb,0,3)}}</b>
 						</span>
+						
 					</li>
+					<li style="margin-top: -20px;list-style-type: none;text-align: right;margin-right: 20px;"><i class="fa fa-eye" aria-hidden="true"> {{$film->views}}</i></li>
 					<table style="margin-top: 35px;" class="table table-striped table-dark text-white">
 					  <tbody>
 					  	<tr>

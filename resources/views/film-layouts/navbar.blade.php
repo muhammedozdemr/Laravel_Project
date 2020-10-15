@@ -18,19 +18,19 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Kategori <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-2">
 									<li>
+										@foreach($categories as $category)
 									<div class="col-sm-6">
 										<ul class="multi-column-dropdown">
-											@foreach($categories as $category)
 											<li><a href="/film-kategori/{{$category->name}}">{{$category->name}}</a></li>
-											@endforeach
 										</ul>
 									</div>
+									@endforeach
 									</li>
 								</ul>
 							</li>
 							<li><a href="/yenifilmler">Yeni Filmler</a></li>
-							<li><a href="/begenilenler">En Çok Beğenilenler</a></li>
-							<li><a href="/encokizlenenler">En Çok İzlenenler</a></li>
+							<li style="width: 190px;"><a href="/begenilenler">En Çok Beğenilenler</a></li>
+							<li style="width: 180px;"><a href="/encokizlenenler">En Çok İzlenenler</a></li>
 							<li><a href="/a-z">A - z </a></li>
 						</ul>
 					</nav>

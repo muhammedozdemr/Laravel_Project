@@ -11,12 +11,14 @@
 							
 								<div class="tittle-head">
 
-									<h4 class="latest-text"> Filmleri </h4>
+									<h4 class="latest-text">Kategori Filmleri </h4>
 									<div class="container">
 										<div class="agileits-single-top">
 											<ol class="breadcrumb">
 											  <li><a href="/">Anasayfa</a></li>
+											 
 											  <li class="active"></li>
+											  
 											</ol>
 										</div>
 									</div>
