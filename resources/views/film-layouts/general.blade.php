@@ -14,7 +14,7 @@
 							
 							@foreach($films as $film)
 							
-							@if($film->date==2020)
+							@if($film->date==2020 && $film->imdb>=5.9)
 							
 							
 							
@@ -54,7 +54,7 @@
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 						@foreach($films as $film)
-						@if($film->views>=579)
+						@if($film->views>=700)
 
 						<div class="col-md-2 w3l-movie-gride-agile">
 							<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
@@ -86,7 +86,7 @@
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="rating" aria-labelledby="rating-tab">
 						@foreach($films as $film)
-						@if($film->imdb>=7.2)
+						@if($film->imdb>=8.1)
 
 						<div class="col-md-2 w3l-movie-gride-agile">
 							<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />

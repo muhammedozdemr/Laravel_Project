@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/veriler">
         <div class="sidebar-brand-icon">
           <img src="{{asset('img/logo/F.png')}}">
         </div>
@@ -26,7 +26,7 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
-        <a class="nav-link" href="/admin">
+        <a class="nav-link" href="/veriler">
           <i class="fa fa-home"></i>
           <span>Anasayfa</span></a>
       </li>
@@ -44,12 +44,6 @@
         <a class="nav-link" href="/admin-category">
           <i class="fa fa-columns"></i>
           <span>Kategori</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-file" ></i>
-          <span>İçerik</span>
         </a>
       </li>
       
@@ -127,7 +121,7 @@
 
 
           <!--Row-->
-
+       @yield('veriler')<!-- Tablodaki veri Sayıları -->
        @yield('films-table') <!--Filmler Tablo Halinde -->
        @yield('f-update') <!--Film Bilgilerini Güncelle -->
        @yield('f-create') <!--Yeni Film Bilgileri Ekle -->

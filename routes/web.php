@@ -57,7 +57,7 @@ Route::get('/uguncelle/{id}','UserController@updateView')->where(array('id'=>'[0
 
 //
 Auth::routes();
-Route::get('/admin', 'HomeController@index')->name('admin-anasayfa');
+Route::get('/veriler', 'HomeController@Veri')->name('admin-veri');
 
 
 //Film Sayfaları

@@ -7,7 +7,8 @@
 						<div class="w3_agile_featured_movies">
 
 							@foreach($films as $film)
-					
+							
+						
 							
 							<div class="col-md-2 w3l-movie-gride-agile">
 								<a href="/icerik/{{$film->name}}" class="hvr-shutter-out-horizontal"><img src="uploads/films/{{$film->image}}" style="height: 250px;" title="album-name" class="img-responsive" alt=" " />
@@ -32,7 +33,7 @@
 								@endif
 							</div>
 						
-	
+						
 							@endforeach
 							<div class="clearfix"> </div>
 							

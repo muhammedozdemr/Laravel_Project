@@ -10,15 +10,21 @@
 						<div class="browse-agile-w3ls general-w3ls">
 							
 								<div class="tittle-head">
-
-									<h4 class="latest-text">Kategori Filmleri </h4>
+									@foreach($films as $film)
+									@if($film->imdb>=8)
+									<h4 class="latest-text">{{$film->category_name}} Filmleri </h4>
+									@endif
+									 @endforeach
 									<div class="container">
 										<div class="agileits-single-top">
 											<ol class="breadcrumb">
 											  <li><a href="/">Anasayfa</a></li>
+											 @foreach($films as $film)
+											 @if($film->imdb>=8)
 											 
-											  <li class="active"></li>
-											  
+											  <li class="active">{{$film->category_name}}</li>
+											@endif
+											  @endforeach
 											</ol>
 										</div>
 									</div>
