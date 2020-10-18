@@ -1,9 +1,9 @@
 	<div id="slidey" style="display:none;">
 		<ul>
-			@foreach($films as $film)
-			@if($film->id>=4 && $film->id<=8 )
-			<li><img src="uploads/films/{{$film->image}}" alt=" "><p class='title'>{{$film->name}}</p><p class='description'> {{substr($film->detail,0,300)}} ...</p></li>
-			@endif
+			@foreach($sliders as $slider)
+			
+			<li><img src="img/{{$slider->image}}" alt=" "><p class='title'>{{$slider->name}}</p><p class='description'> {{substr($slider->detail,0,300)}} ...</p></li>
+			
 			@endforeach
 		</ul>   	
     </div>

@@ -87,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				@endforeach
 			</div>
 			<div style="width: 700px;" class="w3_search">
-				<form action="/search" method="get">
+				<form action="/search" method="get" autocomplete="off">
 					<input type="text" name="search" placeholder="Film Ara">
 					<input type="submit" value="Ara">
 				</form>

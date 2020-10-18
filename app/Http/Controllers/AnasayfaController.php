@@ -15,11 +15,12 @@ class AnasayfaController extends Controller
 {
     public function index()
     {
+        $sliders=DB::table('sliders')->get();
         $settings=DB::table('settings')->get();
         $comments=DB::table('comments')->where('deleted_at','=',null)->get();
         $categories = DB::table('categories')->where('deleted_at','=',null)->get();
         $films = Film::where('imdb','>=',5.9)->orWhere('views','>=',700)->orWhere('date','>=',2011)->get();
-    	return view('film-layouts.index',compact('categories','films','settings','comments'));
+    	return view('film-layouts.index',compact('categories','films','settings','comments','sliders'));
     }
      public function tumfilmler()
     {
